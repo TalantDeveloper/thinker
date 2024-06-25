@@ -1,0 +1,272 @@
+{
+    "info": {
+        "name": "FirstProject API",
+        "_postman_id": "d76cbab3-b748-4859-9514-2c1cfd2e355b",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Student",
+            "item": [
+                {
+                    "name": "Student",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Student",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"person.firstName\",\n    \"phone_number\": \"phoneNumber.phoneNumber\"\n}"
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Student",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"person.firstName\",\n    \"phone_number\": \"phoneNumber.phoneNumber\"\n}"
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Student",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Group",
+            "item": [
+                {
+                    "name": "Group",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id\/Group",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id",
+                                "Group"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Group",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"person.firstName\"\n}"
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id\/Group",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id",
+                                "Group"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Group",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"person.firstName\"\n}"
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id\/Group\/:id",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id",
+                                "Group",
+                                ":id"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Group",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "http:\/\/firstproject-667917fda8a2f.mockapi.uz\/Student\/:id\/Group\/:id",
+                            "host": [
+                                "http:\/\/firstproject-667917fda8a2f.mockapi.uz"
+                            ],
+                            "path": [
+                                "",
+                                "Student",
+                                ":id",
+                                "Group",
+                                ":id"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
