@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Job Detail Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gy-5 gx-4">
+                <div class="col-lg-8">
+                    <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">{{ page.name }}</h1>
+                    <div>
+                        {{ page.content| safe }}
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+                        <h4 class="mb-4">
+                            Mutafakkir
+                        </h4>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>
+                            <a href="{% url 'main:page' 'tahrir_hayati' %}">
+                                Tahrir hay'ati
+                            </a>
+                        </p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>
+                            <a href="{% url 'main:page' 'kuzatuv_kegnashi' %}">
+                                Kuzatuv kengashi
+                            </a>
+                        </p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>
+                            <a href="{% url 'main:announcements' %}">
+                                E'lonlar
+                            </a>
+                        </p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>
+                            <a href="{% url 'main:newsletters' %}">
+                                Jurnallar
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Job Detail End -->
+{% endblock %}

@@ -19,10 +19,12 @@
                                     Ilmiy izlanishlar, maqolalar, yosh izlanuvchilarga foydali ma'lumotlar jamlanmasi va
                                     foydali ma'lumotlar.
                                 </p>
-                                <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                <a href="{% url 'main:announcements' %}"
+                                   class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                     E'lonlar
                                 </a>
-                                <a href="#" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
+                                <a href="{% url 'main:newsletters' %}"
+                                   class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
                                     Jurnallar
                                 </a>
                             </div>
@@ -44,10 +46,12 @@
                                     Ilmiy izlanishlar, maqolalar, yosh izlanuvchilarga foydali ma'lumotlar jamlanmasi va
                                     foydali ma'lumotlar.
                                 </p>
-                                <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                <a href="{% url 'main:announcements' %}"
+                                   class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                     E'lonlar
                                 </a>
-                                <a href="#" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
+                                <a href="{% url 'main:newsletters' %}"
+                                   class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
                                     Jurnallar
                                 </a>
                             </div>
@@ -67,195 +71,48 @@
             <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="job-item p-4 mb-4">
-                            <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded"
-                                         src="{% static 'img/com-logo-1.jpg' %}" alt=""
-                                         style="width: 80px; height: 80px;">
-                                    <div class="text-start ps-4">
-                                        <h5 class="mb-3">
-                                            Jurnal 001
-                                        </h5>
-                                        <span class="text-truncate me-3">
+                        {% for newsletter in newsletters %}
+                            <div class="job-item p-4 mb-4">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid border rounded"
+                                             src="{{ newsletter.image.url }}" alt=""
+                                             style="width: 80px; height: 80px;">
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3">
+                                                <a href="{% url 'main:newsletter' newsletter.id %}">
+                                                    {{ newsletter.name }}
+                                                </a>
+                                            </h5>
+                                            <span class="text-truncate me-3">
                                             <i class="fa fa-map-marker-alt text-primary me-2"></i>
                                             Toshkent, O'zbekiston
                                         </span>
-                                        <span class="text-truncate me-3">
+                                            <span class="text-truncate me-3">
                                             <i class="far fa-clock text-primary me-2"></i>
-                                            Gazeta
+                                            Jurnal
                                         </span>
-                                        <span class="text-truncate me-3">
+                                            <span class="text-truncate me-3">
                                             <i class="far fa-heart text-primary"></i>
-                                            : 6
+                                            : {{ newsletter.sees }}
                                         </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href="">
-                                            <i class="far fa-heart text-primary"></i>
-
-                                        </a>
-                                        <a class="btn btn-primary" href="">
-                                            Ko'rish
-                                        </a>
+                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+                                            <a class="btn btn-primary" href="{% url 'main:newsletter' newsletter.id %}">
+                                                Ko'rish
+                                            </a>
+                                        </div>
+                                        <small class="text-truncate">
+                                            <i class="far fa-calendar-alt text-primary me-2"></i>
+                                            Sana {{ newsletter.created_at|date:"d-m-Y" }}
+                                        </small>
                                     </div>
-                                    <small class="text-truncate">
-                                        <i class="far fa-calendar-alt text-primary me-2"></i>
-                                        Sana 12.06.2024
-                                    </small>
                                 </div>
                             </div>
-                        </div>
-                        <div class="job-item p-4 mb-4">
-                            <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded"
-                                         src="{% static 'img/com-logo-1.jpg' %}" alt=""
-                                         style="width: 80px; height: 80px;">
-                                    <div class="text-start ps-4">
-                                        <h5 class="mb-3">
-                                            Jurnal 002
-                                        </h5>
-                                        <span class="text-truncate me-3">
-                                            <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                            Toshkent, O'zbekiston
-                                        </span>
-                                        <span class="text-truncate me-3">
-                                            <i class="far fa-clock text-primary me-2"></i>
-                                            Gazeta
-                                        </span>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href="">
-                                            <i class="far fa-heart text-primary"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="">
-                                            Ko'rish
-                                        </a>
-                                    </div>
-                                    <small class="text-truncate">
-                                        <i class="far fa-calendar-alt text-primary me-2"></i>
-                                        Sana 12.06.2024
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-item p-4 mb-4">
-                            <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded"
-                                         src="{% static 'img/com-logo-1.jpg' %}" alt=""
-                                         style="width: 80px; height: 80px;">
-                                    <div class="text-start ps-4">
-                                        <h5 class="mb-3">
-                                            Jurnal 003
-                                        </h5>
-                                        <span class="text-truncate me-3">
-                                            <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                            Toshkent, O'zbekiston
-                                        </span>
-                                        <span class="text-truncate me-3">
-                                            <i class="far fa-clock text-primary me-2"></i>
-                                            Gazeta
-                                        </span>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href="">
-                                            <i class="far fa-heart text-primary"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="">
-                                            Ko'rish
-                                        </a>
-                                    </div>
-                                    <small class="text-truncate">
-                                        <i class="far fa-calendar-alt text-primary me-2"></i>
-                                        Sana 12.06.2024
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-item p-4 mb-4">
-                            <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded"
-                                         src="{% static 'img/com-logo-1.jpg' %}" alt=""
-                                         style="width: 80px; height: 80px;">
-                                    <div class="text-start ps-4">
-                                        <h5 class="mb-3">
-                                            Jurnal 004
-                                        </h5>
-                                        <span class="text-truncate me-3">
-                                            <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                            Toshkent, O'zbekiston
-                                        </span>
-                                        <span class="text-truncate me-3">
-                                            <i class="far fa-clock text-primary me-2"></i>
-                                            Gazeta
-                                        </span>
-
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href="">
-                                            <i class="far fa-heart text-primary"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="">
-                                            Ko'rish
-                                        </a>
-                                    </div>
-                                    <small class="text-truncate"><i
-                                            class="far fa-calendar-alt text-primary me-2"></i>
-                                        Sana 12.06.2024
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-item p-4 mb-4">
-                            <div class="row g-4">
-                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid border rounded"
-                                         src="{% static 'img/com-logo-1.jpg' %}" alt=""
-                                         style="width: 80px; height: 80px;">
-                                    <div class="text-start ps-4">
-                                        <h5 class="mb-3">
-                                            Jurnal 005
-                                        </h5>
-                                        <span class="text-truncate me-3">
-                                            <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                            Toshkent, O'zbekiston
-                                        </span>
-                                        <span class="text-truncate me-3">
-                                            <i class="far fa-clock text-primary me-2"></i>
-                                            Gazeta
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                    <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href="">
-                                            <i class="far fa-heart text-primary"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="">
-                                            Ko'rish
-                                        </a>
-                                    </div>
-                                    <small class="text-truncate"><i
-                                            class="far fa-calendar-alt text-primary me-2"></i>
-                                        Sana 12.06.2024
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary py-3 px-5" href="#">
+                        {% endfor %}
+                        <a class="btn btn-primary py-3 px-5" href="{% url 'main:newsletters' %}">
                             Barcha jurnallarni ko'rish
                         </a>
                     </div>
@@ -266,88 +123,32 @@
     <!-- Jobs End -->
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-5 wow fadeInUp">
         <div class="container">
             <h1 class="text-center mb-5">E'lonlar!!!</h1>
             <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item bg-light rounded p-4">
-                    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                    <p>
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                        labore
-                        diam
-                    </p>
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/image.jpg' %}"
-                             style="width: 50px; height: 50px;" alt="">
-                        <div class="ps-3">
-                            <h5 class="mb-1">
-                                Mirzayev Shohinur
-                            </h5>
-                            <small>
-                                muallif
-                            </small>
+                {% for announcement in announcements %}
+                    <a href="{% url 'main:announcement' announcement.id %}">
+                        <div class="testimonial-item bg-light rounded p-4">
+
+                            <p class="m-2">
+                                {{ announcement.name }}
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{{ announcement.image.url }}"
+                                     style="width: 80px; height: auto;" alt="">
+                                <div class="ps-3">
+                                    <h6 class="mb-1">
+                                        Mirzayev Shohinur
+                                    </h6>
+                                    <small>
+                                        muallif
+                                    </small>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light rounded p-4">
-                    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                    <p>
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                        labore
-                        diam
-                    </p>
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-2.jpg' %}"
-                             style="width: 50px; height: 50px;" alt="">
-                        <div class="ps-3">
-                            <h5 class="mb-1">
-                                Client Name
-                            </h5>
-                            <small>
-                                Profession
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light rounded p-4">
-                    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                    <p>
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos
-                        labore
-                        diam
-                    </p>
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-3.jpg' %}"
-                             style="width: 50px; height: 50px;" alt="">
-                        <div class="ps-3">
-                            <h5 class="mb-1">
-                                Client Name
-                            </h5>
-                            <small>
-                                Profession
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light rounded p-4">
-                    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                    <p>
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
-                    <div class="d-flex align-items-center">
-                        <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-4.jpg' %}"
-                             style="width: 50px; height: 50px;" alt="">
-                        <div class="ps-3">
-                            <h5 class="mb-1">
-                                Client Name
-                            </h5>
-                            <small>
-                                Profession
-                            </small>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </div>
