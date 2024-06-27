@@ -83,17 +83,17 @@
                                                 </a>
                                             </h5>
                                             <span class="text-truncate me-3">
-                                            <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                                            Toshkent, O'zbekiston
-                                        </span>
+                                                <i class="fa fa-map-marker-alt text-primary me-2"></i>
+                                                Toshkent, O'zbekiston
+                                            </span>
                                             <span class="text-truncate me-3">
-                                            <i class="far fa-clock text-primary me-2"></i>
-                                            Jurnal
-                                        </span>
+                                                <i class="far fa-clock text-primary me-2"></i>
+                                                Jurnal
+                                            </span>
                                             <span class="text-truncate me-3">
-                                            <i class="far fa-heart text-primary"></i>
-                                            : {{ newsletter.sees }}
-                                        </span>
+                                                <i class="fa fa-eye text-primary"></i>
+                                                : {{ newsletter.sees }}
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
@@ -128,7 +128,6 @@
                 {% for announcement in announcements %}
                     <a href="{% url 'main:announcement' announcement.id %}">
                         <div class="testimonial-item bg-light rounded p-4">
-
                             <p class="m-2">
                                 {{ announcement.name }}
                             </p>
