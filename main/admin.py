@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Newsletter, Announcement, Pages
+from .models import Newsletter, Announcement, Pages, Welcome
 
 
 class NewsletterAdmin(admin.ModelAdmin):
@@ -21,6 +21,14 @@ class PagesAdmin(admin.ModelAdmin):
     filter = ('id', 'name', 'created_at')
 
 
+class WelcomeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name_1', 'name_2', 'title_1', 'title_2')
+    list_display_links = ('id', 'name_1', 'name_2', 'title_1', 'title_2')
+    search_fields = ('id', 'name_1', 'name_2', 'title_1', 'title_2')
+    filter = ('id', 'name_1', 'name_2', 'title_1', 'title_2')
+
+
 admin.site.register(Newsletter, NewsletterAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Pages, PagesAdmin)
+admin.site.register(Welcome, WelcomeAdmin)

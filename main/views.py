@@ -1,12 +1,18 @@
 from django.shortcuts import render
-from .models import Newsletter, Announcement, Pages
+from .models import Newsletter, Announcement, Pages, Welcome
 from django.core.paginator import Paginator
 
 
 def welcome(request):
     newsletters = Newsletter.objects.all().order_by('-created_at')[:5]
     announcements = Announcement.objects.all()[:4]
-    return render(request, 'main/welcome.html', {"newsletters": newsletters, 'announcements': announcements})
+    welcom = Welcome.objects.all().first()
+    context = {
+        'newsletters': newsletters,
+        'announcements': announcements,
+        'welcom': welcom
+    }
+    return render(request, 'main/welcome.html', context)
 
 
 def newsletters_view(request):

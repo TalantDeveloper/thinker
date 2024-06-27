@@ -6,18 +6,17 @@
     <div class="container-fluid p-0">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{% static 'img/carousel-1.jpg' %}" alt="">
+                <img class="img-fluid" src="{{ welcom.image_1.url }}" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                      style="background: rgba(43, 57, 64, .5);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
                                 <h1 class="display-3 text-white animated slideInDown mb-4">
-                                    Stomatologiya bo'yicha jurnal va gazetalar
+                                    {{ welcom.name_1 }}
                                 </h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">
-                                    Ilmiy izlanishlar, maqolalar, yosh izlanuvchilarga foydali ma'lumotlar jamlanmasi va
-                                    foydali ma'lumotlar.
+                                    {{ welcom.title_1 }}
                                 </p>
                                 <a href="{% url 'main:announcements' %}"
                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
@@ -33,18 +32,17 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="{% static 'img/carousel-2.jpg' %}" alt="">
+                <img class="img-fluid" src="{{ welcom.image_2.url }}" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                      style="background: rgba(43, 57, 64, .5);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
                                 <h1 class="display-3 text-white animated slideInDown mb-4">
-                                    Stomatologiya bo'yicha jurnal va gazetalar
+                                    {{ welcom.name_2 }}
                                 </h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">
-                                    Ilmiy izlanishlar, maqolalar, yosh izlanuvchilarga foydali ma'lumotlar jamlanmasi va
-                                    foydali ma'lumotlar.
+                                    {{ welcom.title_2 }}
                                 </p>
                                 <a href="{% url 'main:announcements' %}"
                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
